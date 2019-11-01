@@ -1,0 +1,37 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.1",
+    "parameters": {
+        "location-north": {
+            "type": "string",
+            "defaultValue": "northeurope"
+        },
+        "location-west": {
+            "type": "string",
+            "defaultValue": "westeurope"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "[parameters('location-north')]",
+            "name": "valis2-North",
+            "properties": {}
+        },
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "[parameters('location-west')]",
+            "name": "valis2-West",
+            "properties": {}
+        }
+    ],
+    "outputs": {
+        "final" : {
+            "type" : "string",
+            "value": "Success! Resource groups created."
+        }
+    }
+}
